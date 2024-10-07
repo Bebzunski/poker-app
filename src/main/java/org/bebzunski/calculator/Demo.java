@@ -2,24 +2,29 @@ package org.bebzunski.calculator;
 
 import java.time.LocalTime;
 
+import org.bebzunski.calculator.output.WinningOddsOutput;
+import org.bebzunski.calculator.services.PokerCalculator;
+import org.bebzunski.calculator.services.TimeLogger;
+
 import static org.bebzunski.calculator.enums.Face.ACE;
-import static org.bebzunski.calculator.enums.Face.QUEEN;
-import static org.bebzunski.calculator.pojo.Card.clubOf;
-import static org.bebzunski.calculator.pojo.Card.diamondOf;
-import static org.bebzunski.calculator.pojo.Card.heartOf;
-import static org.bebzunski.calculator.pojo.Card.spadeOf;
+import static org.bebzunski.calculator.enums.Face.FIVE;
+import static org.bebzunski.calculator.enums.Face.JACK;
+import static org.bebzunski.calculator.enums.Face.KING;
+import static org.bebzunski.calculator.enums.Face.SIX;
+import static org.bebzunski.calculator.enums.Face.TEN;
+import static org.bebzunski.calculator.enums.Face.THREE;
+import static org.bebzunski.calculator.enums.Face.TWO;
 
 public class Demo {
 
 	public static void main(String[] args) {
 		PokerCalculator calculator = PokerCalculator.holdem();
-		calculator.addPlayerCards(diamondOf(QUEEN), heartOf(QUEEN));
-		calculator.addPlayerCards(diamondOf(ACE), heartOf(ACE));
-		calculator.addDeadCards(spadeOf(ACE), clubOf(ACE));
+		calculator.addPlayerCards(ACE.d(), JACK.d());
+		calculator.addPlayerCards(THREE.h(), THREE.c());
 
 		LocalTime onStart = TimeLogger.onStart();
 		WinningOddsOutput odds = calculator.checkWinningOdds();
-		TimeLogger.logMilliseconds("checkWinningOdds", onStart);
+		TimeLogger.logSeconds("checkWinningOdds", onStart);
 		System.out.println(odds.wonByPlayer());
 
 		//		LocalTime onStart = TimeLogger.onStart();

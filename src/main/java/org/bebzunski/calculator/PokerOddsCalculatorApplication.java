@@ -9,5 +9,4 @@ public class PokerOddsCalculatorApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PokerOddsCalculatorApplication.class, args);
 	}
-
 }
