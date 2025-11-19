@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.bebzunski</groupId>
-	<artifactId>poker-odds-calculator</artifactId>
+	<artifactId>poker-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>poker-odds-calculator</name>
 	<description>Poker Odds Calculator</description>
