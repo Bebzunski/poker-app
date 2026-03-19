@@ -19,13 +19,6 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/")
 public class PokerController {
 
-	@GetMapping("/cards/{number}")
-	public List<Card> dealCards(@PathVariable int number) {
-		Deck fullDeck = Deck.fullDeck();
-		fullDeck.loadFresh();
-		return number > 0 ? fullDeck.dealCards(number) : List.of();
-	}
-
 	@GetMapping("/hand")
 	public Hand dealCards() {
 		Deck fullDeck = Deck.fullDeck();

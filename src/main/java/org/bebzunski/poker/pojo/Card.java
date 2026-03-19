@@ -33,7 +33,11 @@ public record Card(Face face, Color color) implements Comparable<Card> {
 
 	@Override
 	public String toString() {
-		return "|%s%s|".formatted(face.getSymbol(), color.getSymbol());
+		return "|%s|".formatted(getId());
+	}
+
+	public String getId() {
+		return "%s%s".formatted(face.getSymbol(), color.getSymbol());
 	}
 
 	@Override

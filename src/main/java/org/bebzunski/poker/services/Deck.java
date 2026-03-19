@@ -47,6 +47,7 @@ public class Deck {
 
 	private Deck(List<Card> cardsScope) {
 		this.cardsScope = Optional.ofNullable(cardsScope).orElse(List.of());
+		loadFresh();
 	}
 
 	private Card dealCard() {
